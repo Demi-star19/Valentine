@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  color: #d6336c;
+}
+
+.buttons {
+  margin-top: 30px;
+  position: relative;
+  height: 120px;
+}
+
+button {
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#yesBtn {
+  background-color: #ff4d6d;
+  color: white;
+}
+
+#noBtn {
+  background-color: #6c757d;
+  color: white;
+  position: absolute;
+}
+
+/* Floating hearts */
+.hearts span {
+  position: absolute;
+  bottom: -10px;
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+
+}
+#teddy-left,
+#teddy-right {
+  width: 160px;
+  position: fixed;
+  bottom: 40px;
+  display: none;
+  animation: bounce 1s infinite;
+  z-index: 10;
+}
+
+#teddy-left {
+  left: 20px;
+}
+
+#teddy-right {
+  right: 20px;
+  transform: scaleX(-1); /* mirror for symmetry */
+}
+
+/* Optional: soft shadow for depth */
+#teddy-left,
+#teddy-right {
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
+}
+
+/* Mobile sizing */
+@media (max-width: 600px) {
+  #teddy-left,
+  #teddy-right {
+    width: 110px;
+    bottom: 20px;
+  }
+}
+
